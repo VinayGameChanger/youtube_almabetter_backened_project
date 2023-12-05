@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Get Youtube Subscribers</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        a {
+            color: red;
+            text-decoration: none;
+        }
+    </style>
+    <script>
+        function submit() {
+            const id = document.getElementById("userID").value;
+            const url = `http://localhost:3000/subscribers/${id}`;
+            window.location.href = url;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Get Youtube Subscribers</h1>
+    <p><strong>GET <a href="http://localhost:3000/subscribers">/subscribers</a></strong></p>
+    <p>Response with an array of subscribers (an Object)</p>
+
+    <p><strong>GET <a href="http://localhost:3000/subscribers/names">/subscribers/names</a></strong></p>
+    <p>Response with an array of subscribers (an Object with only two fields: name and subscribed Channel)</p>
+
+    <!-- <label for="id">ID</label> -->
+    <p><strong>GET <a href="http://localhost:3000/subscribers/:id">/subscribers/:id</a></strong></p>
+
+    <div>
+        <input autocomplete="off" id="userID" type="text" name="id" placeholder="Enter ID">
+        <button onclick="submit()">Click</button>
+    </div>
+
+
+
+    <p>Response with a subscriber (an object) with the given id</p>
+</body>
+
+</html>
